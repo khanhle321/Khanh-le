@@ -62,23 +62,3 @@
     <div class="gallery" id="imageGallery">
         <!-- Các hình ảnh đã tải lên sẽ được hiển thị ở đây -->
     </div>
-
-    <script>
-        const fileInput = document.getElementById('fileInput');
-        const imageGallery = document.getElementById('imageGallery');
-
-        fileInput.addEventListener('change', (event) => {
-            const files = event.target.files;
-            for (let i = 0; i < files.length; i++) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    imageGallery.appendChild(img);
-                };
-                reader.readAsDataURL(files[i]);
-            }
-        });
-    </script>
-</body>
-</html>
